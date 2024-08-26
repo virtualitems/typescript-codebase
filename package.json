@@ -13,8 +13,7 @@
   "types": "./source/index.d.ts",
   "scripts": {
     "build": "tsc && tsc-alias",
-    "dev": "tsc -w",
-    "test": "jest"
+    "dev": "tsc -w"
   },
   "devDependencies": {
     "tsc-alias": "^1.8.10",
