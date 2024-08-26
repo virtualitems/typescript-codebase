@@ -1,5 +1,5 @@
 /**
- * @fileoverview This file is used only for exporting ports.
+ * @fileoverview Typescript REST API.
  */
 
 import express from 'express';
