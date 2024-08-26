@@ -8,7 +8,7 @@ import express from 'express';
 
 // Modules
 
-import controllers from './controllers.js';
+import * as controllers from './controllers.js';
 
 // Constants
 

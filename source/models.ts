@@ -4,10 +4,13 @@
 
 export class Item
 {
+    [property: string | symbol]: unknown;
+
     public constructor(
         public id?: number,
         public description?: string,
     ) { }
+
 }
 
 

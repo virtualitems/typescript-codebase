@@ -11,17 +11,28 @@ import { database, Item } from './models.js';
 // Constants
 
 
-function list(req: Request, res: Response): void
+function jsonResponse(page: number, perpage: number, total: number, data: TObject[]) {
+    return {
+        page: page,
+        per_page: perpage,
+        total: total,
+        total_pages: Math.ceil(total / perpage),
+        data: data,
+    };
+} //:: ƒ jsonResponse
+
+
+export function list(req: Request, res: Response): void
 {
 
-    const page = Number(req.query.page);
+    const page = Number(req.query.page ?? 1);
 
     if (Object.is(NaN, page)) {
         res.status(400).json({ error: 'Invalid page number.' });
         return;
     }
 
-    const perpage = Number(req.query.per_page);
+    const perpage = Number(req.query.per_page ?? 10);
 
     if (Object.is(NaN, perpage)) {
         res.status(400).json({ error: 'Invalid per_page number.' });
@@ -32,39 +43,30 @@ function list(req: Request, res: Response): void
     const end = start + perpage;
     const data: Item[] = database.slice(start, end);
 
-    res.json(data);
+    res.json(jsonResponse(page, perpage, database.length, data));
 
 } //:: ƒ list
 
 
-function show(_req: Request, res: Response): void
+export function show(_req: Request, res: Response): void
 {
     res.send('show');
 } //:: ƒ show
 
 
-function store(_req: Request, res: Response): void
+export function store(_req: Request, res: Response): void
 {
     res.send('store');
 } //:: ƒ store
 
 
-function update(_req: Request, res: Response): void
+export function update(_req: Request, res: Response): void
 {
     res.send('update');
 } //:: ƒ update
 
 
-function remove(_req: Request, res: Response): void
+export function remove(_req: Request, res: Response): void
 {
     res.send('remove');
 } //:: ƒ remove
-
-
-export default {
-    list,
-    show,
-    store,
-    update,
-    remove,
-};
