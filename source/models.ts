@@ -4,7 +4,7 @@
 
 export class Item
 {
-    [property: string | symbol]: unknown;
+    [property: string]: unknown;
 
     public constructor(
         public id?: number,

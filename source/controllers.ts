@@ -11,17 +11,6 @@ import { database, Item } from './models.js';
 // Constants
 
 
-function jsonResponse(page: number, perpage: number, total: number, data: TObject[]) {
-    return {
-        page: page,
-        per_page: perpage,
-        total: total,
-        total_pages: Math.ceil(total / perpage),
-        data: data,
-    };
-} //:: ƒ jsonResponse
-
-
 export function list(req: Request, res: Response): void
 {
 
@@ -43,7 +32,13 @@ export function list(req: Request, res: Response): void
     const end = start + perpage;
     const data: Item[] = database.slice(start, end);
 
-    res.json(jsonResponse(page, perpage, database.length, data));
+    res.json({
+        page: page,
+        per_page: perpage,
+        total: database.length,
+        total_pages: Math.ceil(database.length / perpage),
+        data: data,
+    });
 
 } //:: ƒ list
 
