@@ -1,1 +1,1 @@
-type TObject = Record<string | symbol, unknown>;
+type TObject = Record<string, unknown>;
