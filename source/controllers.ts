@@ -36,25 +36,29 @@ function list(req: Request, res: Response): void
 
 } //:: ƒ list
 
+
 function show(_req: Request, res: Response): void
 {
     res.send('show');
-}
+} //:: ƒ show
+
 
 function store(_req: Request, res: Response): void
 {
     res.send('store');
-}
+} //:: ƒ store
+
 
 function update(_req: Request, res: Response): void
 {
     res.send('update');
-}
+} //:: ƒ update
+
 
 function remove(_req: Request, res: Response): void
 {
     res.send('remove');
-}
+} //:: ƒ remove
 
 
 export default {
