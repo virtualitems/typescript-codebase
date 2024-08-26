@@ -47,9 +47,25 @@ export function list(req: Request, res: Response): void
 } //:: ƒ list
 
 
-export function show(_req: Request, res: Response): void
+export function show(req: Request, res: Response): void
 {
-    res.send('show');
+
+    const id = Number(req.params.id);
+
+    if (Object.is(NaN, id)) {
+        res.status(400).json({ error: 'Invalid item ID.' });
+        return;
+    }
+
+    const item = database.find((item) => item.id === id);
+
+    if (item === undefined) {
+        res.status(404).json({ error: 'Item not found.' });
+        return;
+    }
+
+    res.json({ data: item });
+
 } //:: ƒ show
 
 
