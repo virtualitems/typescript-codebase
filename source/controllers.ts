@@ -4,12 +4,17 @@ import { type Request, type Response } from 'express';
 
 // Modules
 
+import { database, Item } from './models.js';
+
+// Types
+
 // Constants
 
 
 function list(_req: Request, res: Response): void
 {
-    res.send('list');
+    const data: Item[] = database.slice(0, 10);
+    res.json(data);
 }
 
 function show(_req: Request, res: Response): void
