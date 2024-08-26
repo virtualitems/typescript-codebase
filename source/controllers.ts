@@ -18,6 +18,8 @@ import { database, Item } from './models.js';
 export function list(req: Request, res: Response): void
 {
 
+    const q = req.query.q;
+
     const page = Number(req.query.page ?? 1);
 
     if (Object.is(NaN, page)) {
@@ -34,7 +36,16 @@ export function list(req: Request, res: Response): void
 
     const start = (page - 1) * perpage;
     const end = start + perpage;
-    const data: Item[] = database.slice(start, end);
+    let data: Item[] = database.slice(start, end);
+
+    if ('string' === typeof q) {
+        data = data.filter((item) => item.description?.includes(q));
+    }
+
+    else if (q !== undefined) {
+        res.status(400).json({ error: 'Invalid search query.' });
+        return;
+    }
 
     res.json({
         page: page,
