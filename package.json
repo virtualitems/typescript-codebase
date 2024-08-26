@@ -20,5 +20,7 @@
     "tsc-alias": "^1.8.10",
     "typescript": "^5.4.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
