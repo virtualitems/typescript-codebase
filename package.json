@@ -1,0 +1,24 @@
+{
+  "name": "typescript-codebase",
+  "private": true,
+  "version": "1.0.0",
+  "author": "https://github.com/virtualitems/",
+  "description": "typescript codebase",
+  "type": "module",
+  "main": "./build/main.js",
+  "files": [
+    "./build",
+    "./source/index.d.ts"
+  ],
+  "types": "./source/index.d.ts",
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "dev": "tsc -w",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {}
+}

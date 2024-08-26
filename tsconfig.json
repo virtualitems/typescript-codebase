@@ -1,0 +1,52 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./source/**/*"
+  ],
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "useDefineForClassFields": true,
+    "moduleDetection": "force",
+    "module": "NodeNext",
+    "rootDir": "./source",
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "./source/*"
+      ],
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./source/index.d.ts"
+    ],
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "outDir": "./build",
+    "removeComments": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+  }
+}
