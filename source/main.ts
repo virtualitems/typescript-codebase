@@ -29,15 +29,15 @@ app.use(express.static('public'));
 
 // Express routes
 
-app.get('/api/items/list', controllers.list);
+app.get('/api/items/', controllers.list);
 
-app.get('/api/items/show', controllers.show);
+app.get('/api/items/:id', controllers.show);
 
-app.post('/api/items/store', controllers.store);
+app.post('/api/items/', controllers.store);
 
-app.put('/api/items/update', controllers.update);
+app.put('/api/items/:id', controllers.update);
 
-app.delete('/api/items/remove', controllers.remove);
+app.delete('/api/items/:id', controllers.remove);
 
 // Express server
 
