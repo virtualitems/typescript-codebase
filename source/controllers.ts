@@ -7,29 +7,29 @@ import { type Request, type Response } from 'express';
 // Constants
 
 
-function list(_req: Request, _res: Response): void
+function list(_req: Request, res: Response): void
 {
-    console.debug('list');
+    res.send('list');
 }
 
-function show(_req: Request, _res: Response): void
+function show(_req: Request, res: Response): void
 {
-    console.debug('show');
+    res.send('show');
 }
 
-function store(_req: Request, _res: Response): void
+function store(_req: Request, res: Response): void
 {
-    console.debug('store');
+    res.send('store');
 }
 
-function update(_req: Request, _res: Response): void
+function update(_req: Request, res: Response): void
 {
-    console.debug('update');
+    res.send('update');
 }
 
-function remove(_req: Request, _res: Response): void
+function remove(_req: Request, res: Response): void
 {
-    console.debug('remove');
+    res.send('remove');
 }
 
 
