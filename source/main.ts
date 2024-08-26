@@ -29,11 +29,11 @@ app.use(express.static('public'));
 
 // Express routes
 
-app.get('/api/items/', controllers.list);
+app.get('/api/items', controllers.list);
 
 app.get('/api/items/:id', controllers.show);
 
-app.post('/api/items/', controllers.store);
+app.post('/api/items', controllers.store);
 
 app.put('/api/items/:id', controllers.update);
 
