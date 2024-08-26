@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Controllers for the API.
+ */
+
 // Libraries
 
 import { type Request, type Response } from 'express';
