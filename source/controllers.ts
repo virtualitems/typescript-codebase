@@ -50,7 +50,7 @@ export function list(req: Request, res: Response): void
 export function show(req: Request, res: Response): void
 {
 
-    const id = Number(req.params.id);
+    const id = Number(req.params.id ?? NaN);
 
     if (Object.is(NaN, id)) {
         res.status(400).json({ error: 'Invalid item ID.' });
