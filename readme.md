@@ -1,1 +1,1 @@
-# My typescript codebase
+# My typescript hexagonal architecture
