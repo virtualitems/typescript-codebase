@@ -18,11 +18,6 @@ const port = 3000;
 
 const app = express();
 
-// Express settings
-
-app.set('view engine', 'ejs');
-app.set('views', './source/views');
-
 // Express middlewares
 
 app.use(express.static('public'));
