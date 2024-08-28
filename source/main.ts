@@ -18,10 +18,6 @@ const port = 3000;
 
 const app = express();
 
-// Express middlewares
-
-app.use(express.static('public'));
-
 // Express routes
 
 app.get('/api/items', controllers.list);
