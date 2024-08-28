@@ -20,6 +20,19 @@ const port = 3000;
 
 const app = express();
 
+// Express middlewares
+
+app.use(
+    function (req, res, next)
+    {
+        if (req.headers['content-type'] !== 'application/json') {
+            res.status(400).json({ error: 'Invalid content type.' });
+            return;
+        }
+        next();
+    }
+);
+
 app.use(bodyParser.json());
 
 // Express routes
@@ -36,6 +49,7 @@ app.delete('/api/items/:id', controllers.remove);
 
 // Express server
 
-app.listen(port, () => {
+app.listen(port, () =>
+{
     console.log(`Server is running on http://localhost:${port}`);
 });
