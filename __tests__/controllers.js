@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 
 
-it('must list items', async () => {
+it('must store an item', async () => {
   // Arrange
 
   const url = 'http://localhost:3000/api/items';
