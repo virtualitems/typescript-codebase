@@ -80,9 +80,35 @@ export function show(req: Request, res: Response): void
 } //:: ƒ show
 
 
-export function store(_req: Request, res: Response): void
+export function store(req: Request, res: Response): void
 {
-    res.send('store');
+    if (req.body === undefined) {
+        res.status(400).json({ error: 'Invalid request body.' });
+        return;
+    }
+
+    if ('object' !== typeof req.body || req.body === null) {
+        res.status(400).json({ error: 'Invalid request body.' });
+        return;
+    }
+
+    if (Array.isArray(req.body)) {
+        res.status(400).json({ error: 'Invalid request body.' });
+        return;
+    }
+
+    if ('string' !== typeof req.body.description) {
+        res.status(400).json({ error: 'Invalid item description.' });
+        return;
+    }
+
+    if (req.body.description.length === 0) {
+        res.status(400).json({ error: 'Invalid item description.' });
+        return;
+    }
+
+    res.status(201).end();
+
 } //:: ƒ store
 
 

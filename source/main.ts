@@ -4,6 +4,8 @@
 
 // Libraries
 
+import bodyParser from 'body-parser';
+
 import express from 'express';
 
 // Modules
@@ -17,6 +19,8 @@ const port = 3000;
 // Express app
 
 const app = express();
+
+app.use(bodyParser.json());
 
 // Express routes
 
