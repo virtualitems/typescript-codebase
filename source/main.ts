@@ -5,7 +5,7 @@
 // Libraries
 
 import bodyParser from 'body-parser';
-
+import cors from 'cors';
 import express from 'express';
 
 // Modules
@@ -21,6 +21,8 @@ const port = 3000;
 const app = express();
 
 // Express middlewares
+
+app.use(cors());
 
 app.use(
     function (req, res, next)
