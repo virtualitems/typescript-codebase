@@ -25,11 +25,14 @@ const app = express();
 app.use(
     function (req, res, next)
     {
+        if (req.headers['content-type'] === undefined) {
+            return next();
+        }
         if (req.headers['content-type'] !== 'application/json') {
             res.status(400).json({ error: 'Invalid content type.' });
             return;
         }
-        next();
+        return next();
     }
 );
 
