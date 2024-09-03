@@ -7,6 +7,7 @@
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import express from 'express';
+import multer from 'multer';
 
 // Modules
 
@@ -24,19 +25,7 @@ const app = express();
 
 app.use(cors());
 
-app.use(
-    function (req, res, next)
-    {
-        if (req.headers['content-type'] === undefined) {
-            return next();
-        }
-        if (req.headers['content-type'] !== 'application/json') {
-            res.status(400).json({ error: 'Invalid content type.' });
-            return;
-        }
-        return next();
-    }
-);
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
@@ -52,9 +41,8 @@ app.put('/api/items/:id', controllers.update);
 
 app.delete('/api/items/:id', controllers.remove);
 
+app.post('/api/upload', multer({ storage: multer.memoryStorage() }).any(), controllers.upload);
+
 // Express server
 
-app.listen(port, () =>
-{
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));

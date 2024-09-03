@@ -177,3 +177,14 @@ export function remove(req: Request, res: Response): void
     res.status(204).end();
 
 } //:: ƒ remove
+
+
+export function upload(req: Request, res: Response): void
+{
+    if (req.files === undefined) {
+        res.status(400).send('Error: No file uploaded');
+        return;
+    }
+
+    res.status(200).send(req.files.length.toString());
+}
