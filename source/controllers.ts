@@ -112,13 +112,68 @@ export function store(req: Request, res: Response): void
 } //:: ƒ store
 
 
-export function update(_req: Request, res: Response): void
+export function update(req: Request, res: Response): void
 {
-    res.send('update');
+    const id = Number(req.params.id ?? NaN);
+
+    if (Object.is(NaN, id)) {
+        res.status(400).json({ error: 'Invalid item ID.' });
+        return;
+    }
+
+    const item = database.find((item) => item.id === id);
+
+    if (item === undefined) {
+        res.status(404).json({ error: 'Item not found.' });
+        return;
+    }
+
+    if (req.body === undefined) {
+        res.status(400).json({ error: 'Invalid request body.' });
+        return;
+    }
+
+    if ('object' !== typeof req.body || req.body === null) {
+        res.status(400).json({ error: 'Invalid request body.' });
+        return;
+    }
+
+    if (Array.isArray(req.body)) {
+        res.status(400).json({ error: 'Invalid request body.' });
+        return;
+    }
+
+    if ('string' !== typeof req.body.description) {
+        res.status(400).json({ error: 'Invalid item description.' });
+        return;
+    }
+
+    if (req.body.description.length === 0) {
+        res.status(400).json({ error: 'Invalid item description.' });
+        return;
+    }
+
+    res.status(204).end();
+
 } //:: ƒ update
 
 
-export function remove(_req: Request, res: Response): void
+export function remove(req: Request, res: Response): void
 {
-    res.send('remove');
+    const id = Number(req.params.id ?? NaN);
+
+    if (Object.is(NaN, id)) {
+        res.status(400).json({ error: 'Invalid item ID.' });
+        return;
+    }
+
+    const item = database.find((item) => item.id === id);
+
+    if (item === undefined) {
+        res.status(404).json({ error: 'Item not found.' });
+        return;
+    }
+
+    res.status(204).end();
+
 } //:: ƒ remove
