@@ -14,6 +14,24 @@ import { database, Item } from './models.js';
 
 // Constants
 
+export function headers(values: Record<string, string>): (req: Request, res: Response, next: () => void) => void
+{
+    return function (req: Request, res: Response, next: () => void): void
+    {
+        for (const key in values) {
+            if (req.headers[key] === undefined) {
+                res.status(400).json({ error: `Missing header: ${key}` });
+                return;
+            }
+            if (req.headers[key] !== values[key]) {
+                res.status(400).json({ error: `Invalid header: ${key}` });
+                return;
+            }
+        }
+        next();
+    };
+}
+
 
 export function list(req: Request, res: Response): void
 {
