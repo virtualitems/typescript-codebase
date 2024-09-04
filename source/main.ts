@@ -29,19 +29,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
+// Express routes middlewares
+
+const multerMemoryStorage = multer({ storage: multer.memoryStorage() }).any();
+
+const contentTypeJSON = controllers.headers({ 'content-type': 'application/json' });
+
 // Express routes
 
 app.get('/api/items', controllers.list);
 
 app.get('/api/items/:id', controllers.show);
 
-app.post('/api/items', controllers.store);
+app.post('/api/items', contentTypeJSON, controllers.store);
 
-app.put('/api/items/:id', controllers.update);
+app.put('/api/items/:id', contentTypeJSON, controllers.update);
 
 app.delete('/api/items/:id', controllers.remove);
 
-app.post('/api/upload', multer({ storage: multer.memoryStorage() }).any(), controllers.upload);
+app.post('/api/upload', multerMemoryStorage, controllers.upload);
 
 // Express server
 
