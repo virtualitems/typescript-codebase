@@ -1,4 +1,10 @@
+// NPM LIBRARIES
+
 import { program } from 'commander';
+
+
+// NODE LIBRARIES
+
 import fs from 'fs';
 import path from 'path';
 
@@ -8,9 +14,8 @@ import path from 'path';
 program
     .option('--lib <name>', 'creates a new library with it\'s shared directory')
     .option('--ctx <name>', 'creates a new context')
-    .option('--dir <path>', 'sets the directory to create the new item');
-
-program.parse();
+    .option('--dir <path>', 'sets the directory to create the new item')
+    .parse(process.argv);
 
 
 // FUNCTIONS
@@ -60,7 +65,7 @@ function executeCreateContext(templatesDir: string, contextDir: string)
 }
 
 
-// CLI
+// CLIENT CODE
 
 const templatesDir = path.join(import.meta.dirname, '..', 'templates');
 
