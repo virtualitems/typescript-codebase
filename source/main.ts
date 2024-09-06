@@ -25,46 +25,39 @@ program
 
 function executeCreateLib(templatesDir: string, libraryDir: string)
 {
-    fs.cp(
-        path.join(templatesDir, 'shared'),
-        path.join(libraryDir, 'shared'),
-        {
-            recursive: true,
-            filter: (src) => (!src.endsWith('.gitkeep'))
-        },
-        (err) =>
-        {
-            if (err !== null) console.error(err);
-
-            fs.copyFile(
-                path.join(templatesDir, 'main.ts'),
-                path.join(libraryDir, 'main.ts'),
-                (err) =>
-                {
-                    if (err !== null) console.error(err);
-
-                    console.log('Library created successfully');
-
-                }
-            );
-        }
-    );
-
-
+    try {
+        fs.cpSync(
+            path.join(templatesDir, 'lib'),
+            libraryDir,
+            {
+                recursive: true,
+                filter: (src) => (!src.endsWith('.gitkeep'))
+            },
+        );
+        console.log('Library created successfully');
+    }
+    catch (err) {
+        console.error(err);
+    }
 }
 
 
 function executeCreateContext(templatesDir: string, contextDir: string)
 {
-    fs.cp(
-        path.join(templatesDir, 'example'),
-        contextDir,
-        {
-            recursive: true,
-            filter: (src) => (!src.endsWith('.gitkeep'))
-        },
-        (err) => (err === null ? console.log('Context created successfully') : console.error(err))
-    );
+    try {
+        fs.cpSync(
+            path.join(templatesDir, 'ctx'),
+            contextDir,
+            {
+                recursive: true,
+                filter: (src) => (!src.endsWith('.gitkeep'))
+            },
+        );
+        console.log('Context created successfully');
+    }
+    catch (err) {
+        console.error(err);
+    }
 }
 
 
@@ -81,6 +74,10 @@ function executeCreateContext(templatesDir: string, contextDir: string)
     if (Object.keys(options).length === 0) {
         program.help();
         return;
+    }
+
+    if (!fs.existsSync(targetDir)) {
+        fs.mkdirSync(targetDir, { recursive: true });
     }
 
     if (options.lib !== undefined) {
