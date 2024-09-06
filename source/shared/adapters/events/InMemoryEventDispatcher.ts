@@ -11,8 +11,6 @@ import EventDispatcher from '../../application/events/EventDispatcher.js';
 
 // Types
 
-// Interfaces
-
 // Constants
 
 

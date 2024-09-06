@@ -22,8 +22,6 @@ import UsersService from '../domain/UsersService.js';
 
 type TManager = DataManager & IUsersDataManager;
 
-// Interfaces
-
 // Constants
 
 

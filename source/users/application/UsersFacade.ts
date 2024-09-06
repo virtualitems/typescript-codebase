@@ -19,8 +19,6 @@ import UsersService from '../domain/UsersService.js';
 
 // Types
 
-// Interfaces
-
 // Constants
 
 

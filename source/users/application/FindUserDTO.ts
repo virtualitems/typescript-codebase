@@ -12,8 +12,6 @@ import DataTransferObject from '@shared/application/DataTransferObject.js';
 
 // Types
 
-// Interfaces
-
 // Constants
 
 
