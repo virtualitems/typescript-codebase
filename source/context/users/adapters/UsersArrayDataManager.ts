@@ -49,7 +49,6 @@ export default
 
     // public METHODS
 
-
     public async all(): Promise<TObject[]>
     {
 
