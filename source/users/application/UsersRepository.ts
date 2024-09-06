@@ -2,8 +2,6 @@
 
 // Shared Module
 
-import type DataManager from '@shared/application/data/DataManager.js';
-
 import Repository from '@shared/application/data/Repository.js';
 
 // Other Modules
@@ -20,15 +18,13 @@ import UsersService from '../domain/UsersService.js';
 
 // Types
 
-type TManager = DataManager & IUsersDataManager;
-
 // Constants
 
 
 /**
  * @description 
  */
-export default class UsersRepository extends Repository<TManager>
+export default class UsersRepository extends Repository<IUsersDataManager>
 {
 
     [property: string | symbol]: unknown;
@@ -47,7 +43,7 @@ export default class UsersRepository extends Repository<TManager>
 
     // Constructor, Getters, Setters
 
-    public constructor(manager: TManager)
+    public constructor(manager: IUsersDataManager)
     {
         super(manager);
     }
