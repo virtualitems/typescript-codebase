@@ -9,8 +9,6 @@ import type EventHandler from './EventHandler.js';
 
 // Types
 
-// Interfaces
-
 // Constants
 
 
