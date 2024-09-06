@@ -24,15 +24,25 @@ function executeCreateLib(templatesDir: string, libraryDir: string)
             recursive: true,
             filter: (src) => (!src.endsWith('.gitkeep'))
         },
-        (err) => (err === null ? console.log('Library created successfully') : console.error(err))
+        (err) =>
+        {
+            if (err !== null) console.error(err);
+
+            fs.copyFile(
+                path.join(templatesDir, 'main.ts'),
+                path.join(libraryDir, 'main.ts'),
+                (err) =>
+                {
+                    if (err !== null) console.error(err);
+
+                    console.log('Library created successfully');
+
+                }
+            );
+        }
     );
 
-    fs.cp(
-        path.join(templatesDir, 'main.ts'),
-        path.join(libraryDir),
-        {},
-        (err) => (err === null ? console.log('Ready to start!') : console.error(err))
-    );
+
 }
 
 
