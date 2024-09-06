@@ -43,15 +43,15 @@ export default interface IUsersDataManager
 
     disconnect(): Promise<unknown>;
 
-    all(): Promise<Iterable<Generic>>;
+    all(): Promise<Iterable<Record<string, unknown>>>;
 
-    filter(target: Generic): Promise<Iterable<Generic>>;
+    filter(target: Record<string, unknown>): Promise<Iterable<Record<string, unknown>>>;
 
-    store(data: Generic): Promise<void>;
+    store(data: Record<string, unknown>): Promise<void>;
 
-    update(target: Generic, data: Generic): Promise<void>;
+    update(target: Record<string, unknown>, data: Record<string, unknown>): Promise<void>;
 
-    delete(target: Generic): Promise<void>;
+    delete(target: Record<string, unknown>): Promise<void>;
 
     // protected METHODS
 

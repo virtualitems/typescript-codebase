@@ -80,7 +80,7 @@ export default class User extends Entity
 
     }
 
-    public override flatten(): Generic
+    public override flatten(): Record<string, unknown>
     {
         return {
             id: this.id?.value,

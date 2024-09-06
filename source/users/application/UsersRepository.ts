@@ -72,7 +72,7 @@ export default class UsersRepository extends Repository<TManager>
         await this.manager.disconnect();
     }
 
-    public async update(target: User, data: Generic): Promise<void>
+    public async update(target: User, data: Record<string, unknown>): Promise<void>
     {
         await this.manager.connect();
         await this.manager.update(target.flatten(), data);

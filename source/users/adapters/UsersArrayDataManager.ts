@@ -26,7 +26,7 @@ export default
     class
     UsersArrayDataManager
     extends
-    ArrayDataManager<Generic>
+    ArrayDataManager<Record<string, unknown>>
     implements
     IUsersDataManager
 {
@@ -49,7 +49,7 @@ export default
 
     // public METHODS
 
-    public async all(): Promise<Generic[]>
+    public async all(): Promise<Record<string, unknown>[]>
     {
 
         if (!this._connection) {
@@ -59,14 +59,14 @@ export default
         return Array.from(this._connection);
     }
 
-    public async filter(target: Partial<Generic>): Promise<Generic[]>
+    public async filter(target: Partial<Record<string, unknown>>): Promise<Record<string, unknown>[]>
     {
 
         if (!this._connection) {
             throw new Error('Database not connected.');
         }
 
-        const result: Generic[] = [];
+        const result: Record<string, unknown>[] = [];
 
         for (const item of this._connection) {
 
@@ -95,7 +95,7 @@ export default
 
     }
 
-    public async store(data: Generic): Promise<void>
+    public async store(data: Record<string, unknown>): Promise<void>
     {
 
         if (!this._connection) {
@@ -106,7 +106,7 @@ export default
 
     }
 
-    public async update(target: Partial<Generic>, data: Partial<Generic>): Promise<void>
+    public async update(target: Partial<Record<string, unknown>>, data: Partial<Record<string, unknown>>): Promise<void>
     {
 
         if (!this._connection) {
@@ -138,7 +138,7 @@ export default
 
     }
 
-    public async delete(target: Partial<Generic>): Promise<void>
+    public async delete(target: Partial<Record<string, unknown>>): Promise<void>
     {
 
         if (!this._connection) {
