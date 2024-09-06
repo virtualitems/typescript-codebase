@@ -80,7 +80,7 @@ export default class User extends Entity
 
     }
 
-    public override flatten(): TObject
+    public override flatten(): Generic
     {
         return {
             id: this.id?.value,

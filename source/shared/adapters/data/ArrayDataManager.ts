@@ -16,7 +16,7 @@ import DataManager from '../../application/data/DataManager.js';
 /**
 * @description 
 */
-export default class ArrayDataManager<T extends TObject> extends DataManager
+export default class ArrayDataManager<T extends Generic> extends DataManager
 {
 
     [property: string | symbol]: unknown;

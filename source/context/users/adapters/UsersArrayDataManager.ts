@@ -26,7 +26,7 @@ export default
     class
     UsersArrayDataManager
     extends
-    ArrayDataManager<TObject>
+    ArrayDataManager<Generic>
     implements
     IUsersDataManager
 {
@@ -49,7 +49,7 @@ export default
 
     // public METHODS
 
-    public async all(): Promise<TObject[]>
+    public async all(): Promise<Generic[]>
     {
 
         if (!this._connection) {
@@ -59,14 +59,14 @@ export default
         return Array.from(this._connection);
     }
 
-    public async filter(target: Partial<TObject>): Promise<TObject[]>
+    public async filter(target: Partial<Generic>): Promise<Generic[]>
     {
 
         if (!this._connection) {
             throw new Error('Database not connected.');
         }
 
-        const result: TObject[] = [];
+        const result: Generic[] = [];
 
         for (const item of this._connection) {
 
@@ -95,7 +95,7 @@ export default
 
     }
 
-    public async store(data: TObject): Promise<void>
+    public async store(data: Generic): Promise<void>
     {
 
         if (!this._connection) {
@@ -106,7 +106,7 @@ export default
 
     }
 
-    public async update(target: Partial<TObject>, data: Partial<TObject>): Promise<void>
+    public async update(target: Partial<Generic>, data: Partial<Generic>): Promise<void>
     {
 
         if (!this._connection) {
@@ -138,7 +138,7 @@ export default
 
     }
 
-    public async delete(target: Partial<TObject>): Promise<void>
+    public async delete(target: Partial<Generic>): Promise<void>
     {
 
         if (!this._connection) {

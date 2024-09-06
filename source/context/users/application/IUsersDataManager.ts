@@ -43,15 +43,15 @@ export default interface IUsersDataManager
 
     disconnect(): Promise<unknown>;
 
-    all(): Promise<Iterable<TObject>>;
+    all(): Promise<Iterable<Generic>>;
 
-    filter(target: TObject): Promise<Iterable<TObject>>;
+    filter(target: Generic): Promise<Iterable<Generic>>;
 
-    store(data: TObject): Promise<void>;
+    store(data: Generic): Promise<void>;
 
-    update(target: TObject, data: TObject): Promise<void>;
+    update(target: Generic, data: Generic): Promise<void>;
 
-    delete(target: TObject): Promise<void>;
+    delete(target: Generic): Promise<void>;
 
     // protected METHODS
 
