@@ -8,8 +8,6 @@ import type DataManager from './DataManager.js';
 
 // Types
 
-// Interfaces
-
 // Constants
 
 
