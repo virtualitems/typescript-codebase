@@ -26,6 +26,13 @@ function executeCreateLib(templatesDir: string, libraryDir: string)
         },
         (err) => (err === null ? console.log('Library created successfully') : console.error(err))
     );
+
+    fs.cp(
+        path.join(templatesDir, 'main.ts'),
+        path.join(libraryDir),
+        {},
+        (err) => (err === null ? console.log('Ready to start!') : console.error(err))
+    );
 }
 
 
