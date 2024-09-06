@@ -12,10 +12,10 @@
 
 
 /**
-* @description 
-* function arguments are DataTransferObject
-*/
-export default abstract class UseCase
+ * @description 
+ * function arguments are Entity
+ */
+export default abstract class Facade
 {
 
     [property: string]: unknown;
@@ -35,8 +35,6 @@ export default abstract class UseCase
     // Constructor, Getters, Setters
 
     // public METHODS
-
-    public abstract execute(...args: unknown[]): Promise<unknown>;
 
     // protected METHODS
 
