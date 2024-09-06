@@ -4,8 +4,7 @@ export { default as UsersArrayDataManager } from './adapters/UsersArrayDataManag
 
 // Application layer
 
-export { default as CreateUsersUseCase } from './application/CreateUsersUseCase.js';
-export { default as FindUsersUseCase } from './application/FindUsersUseCase.js';
+export { default as UsersFacade } from './application/UsersFacade.js';
 export { default as UsersRepository } from './application/UsersRepository.js';
 
 // Domain layer
