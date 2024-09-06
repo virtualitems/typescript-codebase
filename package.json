@@ -1,8 +1,8 @@
 {
-  "name": "hexcli",
+  "name": "tshexcli",
   "version": "1.0.0",
   "author": "https://github.com/virtualitems/",
-  "description": "Hexagonal architecture CLI",
+  "description": "Typescript Hexagonal Architecture CLI",
   "type": "module",
   "main": "./build/main.js",
   "files": [
