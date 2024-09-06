@@ -7,7 +7,8 @@
   "main": "./build/main.js",
   "files": [
     "./build",
-    "./source/index.d.ts"
+    "./source",
+    "./templates"
   ],
   "types": "./source/index.d.ts",
   "scripts": {
