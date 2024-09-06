@@ -39,6 +39,10 @@ export default interface IUsersDataManager
 
     // public METHODS
 
+    connect(...args: unknown[]): Promise<unknown>;
+
+    disconnect(): Promise<unknown>;
+
     all(): Promise<Iterable<TObject>>;
 
     filter(target: TObject): Promise<Iterable<TObject>>;
