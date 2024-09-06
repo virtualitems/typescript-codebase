@@ -30,11 +30,7 @@ type TManager = DataManager & IUsersDataManager;
 /**
  * @description 
  */
-export default
-    class
-    UsersRepository
-    extends
-    Repository<TManager>
+export default class UsersRepository extends Repository<TManager>
 {
 
     [property: string | symbol]: unknown;
