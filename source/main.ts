@@ -17,6 +17,7 @@ program
     .name('tshex')
     .option('--lib <name>', 'creates a new library with it\'s shared directory')
     .option('--ctx <name>', 'creates a new context')
+    .option('--cls <name>', 'creates a new class')
     .option('--dir <path>', 'sets the directory to create the new item')
     .parse(process.argv);
 
@@ -61,10 +62,26 @@ function executeCreateContext(templatesDir: string, contextDir: string)
 }
 
 
+function executeCreateClass(templatesDir: string, classDir: string)
+{
+    try {
+        fs.cpSync(
+            path.join(templatesDir, 'class.ts'),
+            classDir,
+            {},
+        );
+        console.log('Class created successfully');
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+
 // CLIENT CODE
 
 (function ()
 {
+
     const templatesDir = path.join(import.meta.dirname, '..', 'templates');
 
     const options = program.opts();
@@ -86,7 +103,13 @@ function executeCreateContext(templatesDir: string, contextDir: string)
     }
 
     if (options.ctx !== undefined) {
-        targetDir = path.join(targetDir, options.ctx);
-        executeCreateContext(templatesDir, targetDir);
+        const ctxDir = path.join(targetDir, options.ctx);
+        executeCreateContext(templatesDir, ctxDir);
     }
+
+    if (options.cls !== undefined) {
+        const clsDir = path.join(targetDir, options.cls + '.ts');
+        executeCreateClass(templatesDir, clsDir);
+    }
+
 })();
