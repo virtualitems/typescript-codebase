@@ -37,7 +37,7 @@ export default abstract class Entity
 
     public abstract equals(other: Entity): boolean;
 
-    public abstract flatten():  TObject;
+    public abstract flatten(): Generic;
 
     // protected METHODS
 

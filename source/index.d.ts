@@ -1,1 +1,1 @@
-type TObject = Record<string, unknown>;
+type Generic = Record<string, unknown>;
