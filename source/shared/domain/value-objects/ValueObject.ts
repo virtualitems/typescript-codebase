@@ -8,8 +8,6 @@
 
 type TValue = string | symbol | number | bigint | boolean | object | null;
 
-// Interfaces
-
 // Constants
 
 

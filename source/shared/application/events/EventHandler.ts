@@ -8,8 +8,6 @@ import type Event from './Event.js';
 
 // Types
 
-// Interfaces
-
 // Constants
 
 

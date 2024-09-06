@@ -12,8 +12,6 @@ import ValueError from '../errors/ValueError.js';
 
 type T = boolean | null;
 
-// Interfaces
-
 // Constants
 
 
