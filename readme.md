@@ -1,11 +1,11 @@
 # Hexagonal Architecture CLI
 
-This CLI will help you to generate a hexagonal architecture project structure.
+This CLI will help you to generate a hexagonal architecture structure.
 
 # Installation
 
 ```bash
-npm install -g tshexcli
+npm install -g tshex-cli
 ```
 
 # Usage
@@ -13,27 +13,41 @@ npm install -g tshexcli
 ## Help
 
 ```bash
-tshexcli -h
+tshex -h
 
-tshexcli --help
+tshex --help
 ```
 
 ## Create a new library
 
 ```bash
-tshexcli --lib <name>
+tshex --lib <name>
 ```
 
 ## Create a new context
 
 ```bash
-tshexcli --ctx <name>
+tshex --ctx <name>
 ```
 
-## Set the directory to create the new item
+## Create a new class
 
 ```bash
-tshexcli --lib <name> --dir <path>
-
-tshecli --ctx <name> --dir <path>
+tshex --cls <name>
 ```
+
+## Create a new react functional component
+
+```bash
+tshex --rfc <name>
+```
+
+## Set the directory to create the new items
+
+```bash
+tshex --lib <name> --ctx <name> --dir <path>
+```
+
+# example
+
+https://github.com/virtualitems/typescript-codebase/tree/hexagonal-example
