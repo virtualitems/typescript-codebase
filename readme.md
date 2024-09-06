@@ -7,13 +7,7 @@ This CLI will help you to generate a hexagonal architecture project structure.
 ```bash
 npm install -g tshexcli
 ```
-<!-- 
-program
-    .option('--lib <name>', 'creates a new library with it\'s shared directory')
-    .option('--ctx <name>', 'creates a new context')
-    .option('--dir <path>', 'sets the directory to create the new item');
 
-program.parse(); -->
 # Usage
 
 ## Help
