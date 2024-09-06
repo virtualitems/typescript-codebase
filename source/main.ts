@@ -18,6 +18,7 @@ program
     .option('--lib <name>', 'creates a new library with it\'s shared directory')
     .option('--ctx <name>', 'creates a new context')
     .option('--cls <name>', 'creates a new class')
+    .option('--rfc <name>', 'creates a new react functional component')
     .option('--dir <path>', 'sets the directory to create the new item')
     .parse(process.argv);
 
@@ -66,11 +67,26 @@ function executeCreateClass(templatesDir: string, classDir: string)
 {
     try {
         fs.cpSync(
-            path.join(templatesDir, 'class.ts'),
+            path.join(templatesDir, 'class.example'),
             classDir,
             {},
         );
         console.log('Class created successfully');
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+
+function executeCreateReactFunctionalComponent(templatesDir: string, classDir: string)
+{
+    try {
+        fs.cpSync(
+            path.join(templatesDir, 'react.component.example'),
+            classDir,
+            {},
+        );
+        console.log('React component created successfully');
     } catch (err) {
         console.error(err);
     }
@@ -103,13 +119,18 @@ function executeCreateClass(templatesDir: string, classDir: string)
     }
 
     if (options.ctx !== undefined) {
-        const ctxDir = path.join(targetDir, options.ctx);
-        executeCreateContext(templatesDir, ctxDir);
+        targetDir = path.join(targetDir, options.ctx);
+        executeCreateContext(templatesDir, targetDir);
     }
 
     if (options.cls !== undefined) {
-        const clsDir = path.join(targetDir, options.cls + '.ts');
-        executeCreateClass(templatesDir, clsDir);
+        const target = path.join(targetDir, options.cls + '.ts');
+        executeCreateClass(templatesDir, target);
+    }
+
+    if (options.rfc !== undefined) {
+        const target = path.join(targetDir, options.rfc + '.tsx');
+        executeCreateReactFunctionalComponent(templatesDir, target);
     }
 
 })();
