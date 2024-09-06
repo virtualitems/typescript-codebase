@@ -12,7 +12,7 @@
 
 
 /**
- * @description 
+ * @description An Entity is a class that represents a domain concept or element.
  */
 export default abstract class Entity
 {
