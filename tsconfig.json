@@ -21,6 +21,9 @@
       "@/*": [
         "./source/*"
       ],
+      "@shared/*": [
+        "./source/shared/*"
+      ],
     },
     "typeRoots": [
       "./node_modules/@types",
