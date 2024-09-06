@@ -1,3 +1,7 @@
+// Ports layer
+
+export { example } from './ports/index.js';
+
 // Adapters layer
 
 export { default as UsersArrayDataManager } from './adapters/UsersArrayDataManager.js';
