@@ -12,7 +12,7 @@
 
 
 /**
- * @description 
+ * @description An Entity is a class that represents a domain concept or element.
  */
 export default abstract class Entity
 {
@@ -37,7 +37,7 @@ export default abstract class Entity
 
     public abstract equals(other: Entity): boolean;
 
-    public abstract flatten(): Generic;
+    public abstract flatten(): Record<string, unknown>;
 
     // protected METHODS
 
