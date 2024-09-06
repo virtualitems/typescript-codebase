@@ -16,8 +16,6 @@ import User from './User.js';
 
 // Types
 
-// Interfaces
-
 // Constants
 
 
