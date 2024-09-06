@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // NPM LIBRARIES
 
 import { program } from 'commander';
