@@ -35,6 +35,8 @@ export default function __COMPONENT__(props: Props): React.ReactElement
 
     // VIEW ------------------------------
 
-    return React.createElement(React.Fragment, null, props.children);
+    return (
+        React.createElement(React.Fragment, null, props.children)
+    );
 
 } //:: ReactElement
