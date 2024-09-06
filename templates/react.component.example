@@ -1,0 +1,40 @@
+// Libraries
+
+import React from 'react';
+
+// Components
+
+// Features
+
+// Hooks
+
+// Languages
+
+// Styles
+
+// Types
+
+type Props = React.HTMLProps<HTMLElement> & {};
+
+// Constants
+
+
+/**
+ * @description 
+ */
+export default function __COMPONENT__(props: Props): React.ReactElement
+{
+
+    // MODEL -----------------------------
+
+    // VIEW MODEL ------------------------
+
+    // EFFECTS ---------------------------
+
+    // HANDLERS --------------------------
+
+    // VIEW ------------------------------
+
+    return React.createElement(React.Fragment, null, props.children);
+
+} //:: ReactElement
