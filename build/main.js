@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 program
     .name('tshex')
+    .version('1.0.0')
     .option('--lib <name>', 'creates a new library with it\'s shared directory')
     .option('--ctx <name>', 'creates a new context')
     .option('--cls <name>', 'creates a new class')
