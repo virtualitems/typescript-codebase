@@ -37,7 +37,7 @@ function executeCreateContext(templatesDir, contextDir) {
 }
 function executeCreateClass(templatesDir, classDir) {
     try {
-        fs.cpSync(path.join(templatesDir, 'class.example'), classDir, {});
+        fs.cpSync(path.join(templatesDir, 'cls.example'), classDir, {});
         console.log('Class created successfully');
     }
     catch (err) {
@@ -46,7 +46,7 @@ function executeCreateClass(templatesDir, classDir) {
 }
 function executeCreateReactFunctionalComponent(templatesDir, classDir) {
     try {
-        fs.cpSync(path.join(templatesDir, 'react.component.example'), classDir, {});
+        fs.cpSync(path.join(templatesDir, 'rfc.example'), classDir, {});
         console.log('React component created successfully');
     }
     catch (err) {

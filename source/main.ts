@@ -68,7 +68,7 @@ function executeCreateClass(templatesDir: string, classDir: string)
 {
     try {
         fs.cpSync(
-            path.join(templatesDir, 'class.example'),
+            path.join(templatesDir, 'cls.example'),
             classDir,
             {},
         );
@@ -83,7 +83,7 @@ function executeCreateReactFunctionalComponent(templatesDir: string, classDir: s
 {
     try {
         fs.cpSync(
-            path.join(templatesDir, 'react.component.example'),
+            path.join(templatesDir, 'rfc.example'),
             classDir,
             {},
         );
