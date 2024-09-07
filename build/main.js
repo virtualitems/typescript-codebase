@@ -15,7 +15,7 @@ function executeCreateLib(templatesDir, libraryDir) {
     try {
         fs.cpSync(path.join(templatesDir, 'lib'), libraryDir, {
             recursive: true,
-            filter: (src) => (!src.endsWith('.gitkeep'))
+            filter: function (src) { return (!src.endsWith('.gitkeep')); }
         });
         console.log('Library created successfully');
     }
@@ -27,7 +27,7 @@ function executeCreateContext(templatesDir, contextDir) {
     try {
         fs.cpSync(path.join(templatesDir, 'ctx'), contextDir, {
             recursive: true,
-            filter: (src) => (!src.endsWith('.gitkeep'))
+            filter: function (src) { return (!src.endsWith('.gitkeep')); }
         });
         console.log('Context created successfully');
     }
@@ -54,9 +54,10 @@ function executeCreateReactFunctionalComponent(templatesDir, classDir) {
     }
 }
 (function () {
-    const templatesDir = path.join(import.meta.dirname, '..', 'templates');
-    const options = program.opts();
-    let targetDir = path.resolve(options.dir ?? process.cwd());
+    var _a;
+    var templatesDir = path.join(import.meta.dirname, '..', 'templates');
+    var options = program.opts();
+    var targetDir = path.resolve((_a = options.dir) !== null && _a !== void 0 ? _a : process.cwd());
     if (Object.keys(options).length === 0) {
         program.help();
         return;
@@ -73,11 +74,11 @@ function executeCreateReactFunctionalComponent(templatesDir, classDir) {
         executeCreateContext(templatesDir, targetDir);
     }
     if (options.cls !== undefined) {
-        const target = path.join(targetDir, options.cls + '.ts');
+        var target = path.join(targetDir, options.cls + '.ts');
         executeCreateClass(templatesDir, target);
     }
     if (options.rfc !== undefined) {
-        const target = path.join(targetDir, options.rfc + '.tsx');
+        var target = path.join(targetDir, options.rfc + '.tsx');
         executeCreateReactFunctionalComponent(templatesDir, target);
     }
 })();
