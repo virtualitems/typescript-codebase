@@ -47,14 +47,18 @@ export default class BooleanValueObject extends ValueObject
 
     // public METHODS
 
-    public override equals(other: BooleanValueObject): boolean
+    public override equals(other: BooleanValueObject | null | undefined): boolean
     {
-        return this._value === other.value;
+        if (other === null || other === undefined) {
+            return false;
+        }
+
+        return this.value === other.value;
     }
 
     public toggle(): BooleanValueObject
     {
-        return new BooleanValueObject(!this._value);
+        return new BooleanValueObject(!this.value);
     }
 
     // protected METHODS

@@ -47,8 +47,12 @@ export default class NullableBooleanValueObject extends ValueObject
 
     // public METHODS
 
-    public override equals(other: NullableBooleanValueObject): boolean
+    public override equals(other: NullableBooleanValueObject | null | undefined): boolean
     {
+        if (other === null || other === undefined) {
+            return false;
+        }
+
         return this.value === other.value;
     }
 

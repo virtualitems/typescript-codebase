@@ -47,8 +47,12 @@ export default class DateValueObject extends ValueObject
 
     // public METHODS
 
-    public override equals(other: DateValueObject): boolean
+    public override equals(other: DateValueObject | null | undefined): boolean
     {
+        if (other === null || other === undefined) {
+            return false;
+        }
+
         return this.value.getTime() === other.value.getTime();
     }
 

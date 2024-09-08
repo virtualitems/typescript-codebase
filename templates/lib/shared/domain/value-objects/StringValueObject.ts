@@ -47,8 +47,12 @@ export default class StringValueObject extends ValueObject
 
     // public METHODS
 
-    public override equals(other: StringValueObject): boolean
+    public override equals(other: StringValueObject | null | undefined): boolean
     {
+        if (other === null || other === undefined) {
+            return false;
+        }
+
         return this.value === other.value;
     }
 

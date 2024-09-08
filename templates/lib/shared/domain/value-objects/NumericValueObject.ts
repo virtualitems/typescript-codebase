@@ -47,8 +47,12 @@ export default class NumericValueObject extends ValueObject
 
     // public METHODS
 
-    public override equals(other: NumericValueObject): boolean
+    public override equals(other: NumericValueObject | null | undefined): boolean
     {
+        if (other === null || other === undefined) {
+            return false;
+        }
+
         return this.value === other.value;
     }
 
