@@ -16,7 +16,7 @@ import UsersService from '../application/UsersService.js';
 
 // Constants
 
-export function example()
+export async function example()
 {
     const database: Record<string, unknown>[] = [];
 
@@ -26,8 +26,8 @@ export function example()
 
     const service = new UsersService();
 
-    service.create(rep, { slug: Symbol.for('user-1'), name: 'User 1', email: 'user1@example.com' });
-    service.create(rep, { slug: Symbol.for('user-2'), name: 'User 2', email: 'user2@example.com' });
+    await service.create(rep, { slug: Symbol.for('user-1'), name: 'User 1', email: 'user1@example.com' });
+    await service.create(rep, { slug: Symbol.for('user-2'), name: 'User 2', email: 'user2@example.com' });
 
-    service.find(man).then(console.log);
+    await service.find(man).then(console.log);
 }

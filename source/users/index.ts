@@ -1,6 +1,6 @@
 // Ports layer
 
-export { example } from './ports/index.js';
+export { example } from './ports/example.js';
 
 // Adapters layer
 
