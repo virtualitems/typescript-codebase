@@ -10,7 +10,7 @@
 
 import UsersArrayDataManager from '../adapters/UsersArrayDataManager.js';
 import UsersRepository from '../application/UsersRepository.js';
-import UsersFacade from '../application/UsersFacade.js';
+import UsersService from '../application/UsersService.js';
 
 // Types
 
@@ -24,10 +24,10 @@ export function example()
 
     const rep = new UsersRepository(man);
 
-    const facade = new UsersFacade();
+    const service = new UsersService();
 
-    facade.create(rep, { slug: Symbol.for('user-1'), name: 'User 1', email: 'user1@example.com' });
-    facade.create(rep, { slug: Symbol.for('user-2'), name: 'User 2', email: 'user2@example.com' });
+    service.create(rep, { slug: Symbol.for('user-1'), name: 'User 1', email: 'user1@example.com' });
+    service.create(rep, { slug: Symbol.for('user-2'), name: 'User 2', email: 'user2@example.com' });
 
-    facade.find(man).then(console.log);
+    service.find(man).then(console.log);
 }

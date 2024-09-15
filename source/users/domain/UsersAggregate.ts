@@ -2,6 +2,7 @@
 
 // Shared Module
 
+import Aggregate from '@/shared/domain/Aggregate.js';
 import EmailValueObject from '@shared/domain/value-objects/EmailValueObject.js';
 import SymbolValueObject from '@shared/domain/value-objects/SymbolValueObject.js';
 import StringValueObject from '@shared/domain/value-objects/StringValueObject.js';
@@ -22,7 +23,7 @@ import User from './User.js';
 /**
  * @description 
  */
-export default class UsersService
+export default class UsersAggregate extends Aggregate
 {
 
     [property: string | symbol]: unknown;

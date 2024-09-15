@@ -14,7 +14,7 @@ import type IUsersDataManager from './IUsersDataManager.js';
 
 import type User from '../domain/User.js';
 
-import UsersService from '../domain/UsersService.js';
+import UsersAggregate from '../domain/UsersAggregate.js';
 
 // Types
 
@@ -54,7 +54,7 @@ export default class UsersRepository extends Repository<IUsersDataManager>
     {
         await this.manager.connect();
         const query = await this.manager.all();
-        const data = Array.from(query).map(UsersService.createUser);
+        const data = Array.from(query).map(UsersAggregate.createUser);
         await this.manager.disconnect();
         return data;
     }

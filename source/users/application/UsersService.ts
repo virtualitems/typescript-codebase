@@ -2,7 +2,7 @@
 
 // Shared Module
 
-import Facade from '@shared/application/Facade.js';
+import Service from '@shared/application/Service.js';
 
 // Other Modules
 
@@ -15,7 +15,7 @@ import type UsersRepository from './UsersRepository.js';
 
 // Lower Layers
 
-import UsersService from '../domain/UsersService.js';
+import UsersAggregate from '../domain/UsersAggregate.js';
 
 // Types
 
@@ -26,7 +26,7 @@ import UsersService from '../domain/UsersService.js';
  * @description 
  * function arguments are Entity
  */
-export default class UsersFacade extends Facade
+export default class UsersService extends Service
 {
 
     [property: string]: unknown;
@@ -55,7 +55,7 @@ export default class UsersFacade extends Facade
             email: dto.email,
         };
 
-        const entity = UsersService.createUser(data);
+        const entity = UsersAggregate.createUser(data);
         await repository.store(entity);
     }
 

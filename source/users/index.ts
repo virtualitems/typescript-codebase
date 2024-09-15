@@ -8,11 +8,11 @@ export { default as UsersArrayDataManager } from './adapters/UsersArrayDataManag
 
 // Application layer
 
-export { default as UsersFacade } from './application/UsersFacade.js';
+export { default as UsersService } from './application/UsersService.js';
 export { default as UsersRepository } from './application/UsersRepository.js';
 
 // Domain layer
 
-export { default as UsersService } from './domain/UsersService.js';
+export { default as UsersAggregate } from './domain/UsersAggregate.js';
 
 // Constants
