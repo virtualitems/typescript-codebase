@@ -38,7 +38,7 @@ export default abstract class Event
     public constructor(timestamp: number, details?: Record<string, unknown>)
     {
         this.timestamp = timestamp;
-        this.details = details;
+        this.details = details ?? {};
     }
 
     // public METHODS
