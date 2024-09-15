@@ -21,7 +21,7 @@ export default abstract class Event
 
     public readonly timestamp: number;
 
-    public readonly details?: Record<string, unknown>;
+    public readonly details: Record<string, unknown>;
 
     // protected ATTRIBUTES
 
