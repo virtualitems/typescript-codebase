@@ -37,7 +37,7 @@ export default abstract class ValueObject
 
     // public METHODS
 
-    public abstract equals(other: ValueObject): boolean;
+    public abstract equals(other: ValueObject | null | undefined): boolean;
 
     // protected METHODS
 
