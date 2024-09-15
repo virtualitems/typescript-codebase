@@ -13,7 +13,7 @@
  * @description 
  * function arguments are Entity
  */
-export default abstract class Facade
+export default abstract class Service
 {
 
     [property: string]: unknown;
