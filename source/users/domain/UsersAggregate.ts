@@ -58,19 +58,19 @@ export default class UsersAggregate extends Aggregate
             return entity;
         }
 
-        if (data.id !== undefined) {
+        if (data.id !== undefined && data.id !== null) {
             entity.id = SymbolValueObject.from(data.id);
         }
 
-        if (data.slug !== undefined) {
+        if (data.slug !== undefined && data.slug !== null) {
             entity.slug = SymbolValueObject.from(data.slug);
         }
 
-        if (data.name !== undefined) {
+        if (data.name !== undefined && data.name !== null) {
             entity.name = StringValueObject.from(data.name);
         }
 
-        if (data.email !== undefined) {
+        if (data.email !== undefined && data.email !== null) {
             entity.email = EmailValueObject.from(data.email);
         }
 
