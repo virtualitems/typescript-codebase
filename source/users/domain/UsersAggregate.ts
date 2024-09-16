@@ -2,7 +2,7 @@
 
 // Shared Module
 
-import Aggregate from '@/shared/domain/Aggregate.js';
+import Aggregate from '@shared/domain/Aggregate.js';
 import EmailValueObject from '@shared/domain/value-objects/EmailValueObject.js';
 import SymbolValueObject from '@shared/domain/value-objects/SymbolValueObject.js';
 import StringValueObject from '@shared/domain/value-objects/StringValueObject.js';
@@ -50,7 +50,7 @@ export default class UsersAggregate extends Aggregate
 
     // public static METHODS
 
-    public static createUser(data: { id?: symbol, slug?: symbol, name?: string, email?: string; }): User
+    public static createUser(data?: { id?: symbol, slug?: symbol, name?: string, email?: string; }): User
     {
         const entity = new User();
 
