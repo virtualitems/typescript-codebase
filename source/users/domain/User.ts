@@ -29,13 +29,10 @@ export default class User extends Entity
 
     // public ATTRIBUTES
 
-    public id?: SymbolValueObject;
-
-    public slug?: SymbolValueObject;
-
-    public email?: EmailValueObject;
-
-    public name?: StringValueObject;
+    public id: SymbolValueObject | null;
+    public slug: SymbolValueObject | null;
+    public email: EmailValueObject | null;
+    public name: StringValueObject | null;
 
     // protected ATTRIBUTES
 
@@ -52,15 +49,18 @@ export default class User extends Entity
     public constructor()
     {
         super();
+        this.id = null;
+        this.slug = null;
+        this.email = null;
+        this.name = null;
     }
 
     // public METHODS
 
     public override equals(other: User): boolean
     {
-
-        const existsID = this.id !== undefined && other.id !== undefined;
-        const existsSlug = this.slug !== undefined && other.slug !== undefined;
+        const existsID = this.id !== null && other.id !== null;
+        const existsSlug = this.slug !== null && other.slug !== null;
 
         if (!existsID && !existsSlug) {
             return false;
@@ -75,16 +75,15 @@ export default class User extends Entity
         }
 
         return true;
-
     }
 
     public override flatten(): Record<string, unknown>
     {
         return {
-            id: this.id?.value,
-            slug: this.slug?.value,
-            name: this.name?.value,
-            email: this.email?.value
+            id: this.id?.value ?? null,
+            slug: this.slug?.value ?? null,
+            name: this.name?.value ?? null,
+            email: this.email?.value ?? null,
         };
     }
 
