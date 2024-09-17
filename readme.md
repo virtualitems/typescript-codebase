@@ -28,6 +28,15 @@ npm install -g tshex-cli
 
 # Usage
 
+> Remember to replace placeholders `<...>` with the actual data.
+>
+
+## Getting started
+
+```bash
+tshex --lib <library-name> --ctx <context-name>
+```
+
 ## Help
 
 ```bash
@@ -63,5 +72,5 @@ tshex --rfc <name>
 ## Set the directory to create the new items
 
 ```bash
-tshex --lib <name> --ctx <name> --dir <path>
+tshex --lib <lib-name> --ctx <ctx-name> --dir <path>
 ```
