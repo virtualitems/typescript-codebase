@@ -20,12 +20,12 @@ type Props = React.HTMLProps<HTMLElement> & {};
 /**
  * @description 
  */
-export default function (props: Props): React.ReactElement
+export default function __COMPONENT__(props: Props): React.ReactElement
 {
 
-    // MODEL -----------------------------
+    // MODELS -----------------------------
 
-    // VIEW MODEL ------------------------
+    // VIEW MODELS ------------------------
 
     // EFFECTS ---------------------------
 
